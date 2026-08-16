@@ -1,0 +1,28 @@
+Create this path if you want to run the Java backend:
+src/main/java/com/jaynathi/creatorapi/CreatorApiApplication.java
+
+Example:
+package com.jaynathi.creatorapi;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.*;
+
+@SpringBootApplication
+@RestController
+public class CreatorApiApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(CreatorApiApplication.class, args);
+    }
+
+    @GetMapping("/api/creator")
+    public Object creator() {
+        return java.util.Map.of(
+            "name", "Nathi / Jay",
+            "location", "South Africa",
+            "instagram", "@jay.ma._",
+            "tiktok", "@jaeh___",
+            "topTikTokReach", "174.2K+"
+        );
+    }
+}
