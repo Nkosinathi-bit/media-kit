@@ -41,7 +41,7 @@ async function checkWidth(page, label) {
       await checkWidth(page, 'Creator website width ' + width);
     }
     for (const src of await page.locator('img').evaluateAll(images => images.map(image => image.getAttribute('src')))) {
-      assert.equal((await context.request.get(new URL(src, base))).status(), 200, src);
+      assert.equal((await context.request.get(new URL(src, base).toString())).status(), 200, src);
     }
     const nojs = await browser.newContext({javaScriptEnabled: false, viewport: {width:390,height:844}});
     await localOnly(nojs);
