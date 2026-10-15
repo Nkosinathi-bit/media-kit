@@ -9,6 +9,21 @@ A deployed creator portfolio presenting visual work, fashion and lifestyle conte
 
 [View the website](https://nkosinathi-bit.github.io/media-kit/)
 
+## Visual preview
+
+Actual Chromium browser captures of the running site. 
+
+![JAY / NATHI creator website — desktop browser screenshot](docs/screenshots/desktop.jpg)
+
+<details>
+<summary>Mobile browser preview</summary>
+
+<img src="docs/screenshots/mobile.jpg" alt="JAY / NATHI creator website — mobile browser screenshot" width="300">
+
+</details>
+
+Desktop: 1440 × 1000 · Mobile: 390 × 844. [Capture source and provenance](docs/screenshots/capture.json).
+
 ## Frontend features
 
 - Responsive layouts and accessible mobile-menu controls.
@@ -50,3 +65,4 @@ The C# prototype validates sample contact requests but does not send email or sa
 The existing workflow publishes to GitHub Pages on pushes to main. In Settings → Pages, GitHub Actions is the configured publishing source.
 
 **Maintained by:** Nkosinathi Mathenjwa
+
