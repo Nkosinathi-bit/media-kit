@@ -1,52 +1,52 @@
 # JAY / NATHI — Creator Website
 
-A personal creator portfolio for Nkosinathi Mathenjwa, built with HTML, CSS and vanilla JavaScript.
+[![Browser checks](https://github.com/Nkosinathi-bit/media-kit/actions/workflows/site-check.yml/badge.svg)](https://github.com/Nkosinathi-bit/media-kit/actions/workflows/site-check.yml)
+[![Deployment](https://github.com/Nkosinathi-bit/media-kit/actions/workflows/static.yml/badge.svg)](https://github.com/Nkosinathi-bit/media-kit/actions/workflows/static.yml)
 
-The frontend presents fashion and lifestyle content, a visual portfolio, creator statistics and collaboration contact details.
+**Personal project · HTML/CSS · JavaScript · GitHub Pages**
+
+A deployed creator portfolio presenting visual work, fashion and lifestyle content, creator statistics and collaboration contact links.
+
+[View the website](https://nkosinathi-bit.github.io/media-kit/)
 
 ## Frontend features
 
-- Responsive layouts and mobile navigation.
-- Scroll-based reveals and animated number counters.
-- A visual portfolio with WebP images and PNG fallbacks.
-- Email, Instagram and TikTok contact links.
-- A GitHub Actions workflow for publishing the static site to GitHub Pages.
+- Responsive layouts and accessible mobile-menu controls.
+- Scroll-based reveals and animated counters.
+- WebP portfolio images with PNG fallbacks.
+- Working email, Instagram and TikTok links.
+- Visible content when JavaScript is disabled.
+- Automated browser checks and static-site deployment.
 
 ## View locally
 
-Run from the repository root:
-
-```bash
+~~~bash
 python -m http.server 8000
-```
+~~~
 
-Open [http://localhost:8000](http://localhost:8000).
+Open http://localhost:8000.
 
-## Files
+## Folder organisation
 
-| Path | Purpose |
+| Path | Responsibility |
 | --- | --- |
-| `index.html` | Website content and structure |
-| `styles.css` | Layout, visual design and responsive styles |
-| `script.js` | Mobile navigation, scroll effects and counters |
-| `assets/` | Portfolio images |
-| `favicon.svg` | Site icon |
-| `.github/workflows/static.yml` | GitHub Pages deployment |
-| `Program.cs`, `JayNathi.CreatorApi.csproj` | Optional C# API prototype |
-| `pom.xml`, `src-main.txt` | Java/Spring starter reference |
+| index.html, styles.css, script.js | Static frontend |
+| assets/ | Portfolio image assets |
+| favicon.svg, robots.txt, sitemap.xml | Site metadata |
+| backend/dotnet/ | Optional C# API prototype |
+| backend/java/ | Optional Java/Spring configuration and starter reference |
+| .github/ | Browser checks and Pages deployment |
 
-## GitHub Pages
+The Pages workflow publishes only frontend files and assets.
 
-The deployment workflow packages the frontend files and image assets. In the repository's **Settings → Pages**, choose **GitHub Actions** as the source, then use the deployment URL shown in the Actions run.
+## Backend scope
 
-Keep `assets/` next to `index.html`. The site uses relative image paths so it can run under a GitHub Pages project URL.
+The live frontend uses email links for contact. It is not connected to a deployed backend.
 
-## Backend status
+The C# prototype validates sample contact requests but does not send email or save messages. The Java reference must be placed in the appropriate source directory before it can be built. See [backend notes](backend/README.md).
 
-The published frontend is a static site. Contact links open the visitor's email application; the frontend does not submit to an API.
+## Deployment
 
-The C# files are a starter API with creator information and a sample contact endpoint. The endpoint currently validates input and returns a response; it does not send email or persist messages.
+The existing workflow publishes to GitHub Pages on pushes to main. In Settings → Pages, GitHub Actions is the configured publishing source.
 
-The Java example in `src-main.txt` is a reference that must be placed in the Java source directory before it can be built. Neither backend is deployed by the Pages workflow.
-
-**Author:** Nkosinathi Mathenjwa
+**Maintained by:** Nkosinathi Mathenjwa

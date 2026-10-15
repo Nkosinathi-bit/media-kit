@@ -29,4 +29,3 @@ app.MapPost("/api/contact", (ContactRequest request) =>
 app.Run();
 
 record ContactRequest(string Name, string Email, string? Brand, string? Message);
-

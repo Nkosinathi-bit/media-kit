@@ -1,3 +1,8 @@
+# Java / Spring starter reference
+
+This is an optional reference, not a deployed service.
+
+```text
 Create this path if you want to run the Java backend:
 src/main/java/com/jaynathi/creatorapi/CreatorApiApplication.java
 
@@ -26,3 +31,4 @@ public class CreatorApiApplication {
         );
     }
 }
+```
