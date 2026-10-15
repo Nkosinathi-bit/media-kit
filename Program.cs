@@ -1,6 +1,6 @@
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
-    policy.WithOrigins("https://YOUR-GITHUB-USERNAME.github.io")
+    policy.WithOrigins("https://nkosinathi-bit.github.io")
           .AllowAnyHeader()
           .AllowAnyMethod()));
 
@@ -23,9 +23,10 @@ app.MapPost("/api/contact", (ContactRequest request) =>
         return Results.BadRequest(new { message = "Name and email are required." });
 
     // Add email-provider integration here when you are ready.
-    return Results.Ok(new { message = "Thanks — your brief was received." });
+    return Results.Ok(new { message = "Demo request validated. No message was sent or stored." });
 });
 
 app.Run();
 
 record ContactRequest(string Name, string Email, string? Brand, string? Message);
+

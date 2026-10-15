@@ -1,42 +1,52 @@
-# JAY / NATHI — Luxury Creator Website
+# JAY / NATHI — Creator Website
 
-A static GitHub Pages portfolio for JAY / NATHI, built with semantic HTML, CSS and vanilla JavaScript. A C# API and Java/Spring starter are included as optional backend foundations for a future contact form or campaign tooling.
+A personal creator portfolio for Nkosinathi Mathenjwa, built with HTML, CSS and vanilla JavaScript.
 
-## IMPORTANT: fixing the missing-image problem
+The frontend presents fashion and lifestyle content, a visual portfolio, creator statistics and collaboration contact details.
 
-GitHub Pages is case-sensitive and the deployed artifact must contain `index.html` at the top level. This package is intentionally **flat**: upload the contents of this folder into the root of your GitHub repository, not the outer folder itself. The image folder must sit beside `index.html`:
+## Frontend features
 
+- Responsive layouts and mobile navigation.
+- Scroll-based reveals and animated number counters.
+- A visual portfolio with WebP images and PNG fallbacks.
+- Email, Instagram and TikTok contact links.
+- A GitHub Actions workflow for publishing the static site to GitHub Pages.
+
+## View locally
+
+Run from the repository root:
+
+```bash
+python -m http.server 8000
 ```
-index.html
-styles.css
-script.js
-favicon.svg
-assets/
-  hero-beach.webp
-  hero-beach.png
-  ...
-```
 
-The HTML uses relative paths like `./assets/hero-beach.webp`, so the images continue to work on a GitHub Pages project site.
+Open [http://localhost:8000](http://localhost:8000).
+
+## Files
+
+| Path | Purpose |
+| --- | --- |
+| `index.html` | Website content and structure |
+| `styles.css` | Layout, visual design and responsive styles |
+| `script.js` | Mobile navigation, scroll effects and counters |
+| `assets/` | Portfolio images |
+| `favicon.svg` | Site icon |
+| `.github/workflows/static.yml` | GitHub Pages deployment |
+| `Program.cs`, `JayNathi.CreatorApi.csproj` | Optional C# API prototype |
+| `pom.xml`, `src-main.txt` | Java/Spring starter reference |
 
 ## GitHub Pages
 
-The included workflow deploys the repository root on every push to `main`.
+The deployment workflow packages the frontend files and image assets. In the repository's **Settings → Pages**, choose **GitHub Actions** as the source, then use the deployment URL shown in the Actions run.
 
-1. Put these files in the repository root.
-2. Push to `main`.
-3. In **Settings → Pages**, choose **GitHub Actions** as the source.
-4. Wait for the workflow to finish in the Actions tab.
-5. Open the Pages URL shown by GitHub.
+Keep `assets/` next to `index.html`. The site uses relative image paths so it can run under a GitHub Pages project URL.
 
-If the repository is named `<username>.github.io`, the site is normally available at `https://<username>.github.io/`. A project repository uses `https://<username>.github.io/<repository>/` unless you add a custom domain.
+## Backend status
 
-## Personalisation
+The published frontend is a static site. Contact links open the visitor's email application; the frontend does not submit to an API.
 
-Replace `YOUR-CREATOR-EMAIL@example.com` in `index.html` with your creator email before publishing.
+The C# files are a starter API with creator information and a sample contact endpoint. The endpoint currently validates input and returns a response; it does not send email or persist messages.
 
-Update the TikTok URL if your handle differs from `@jaeh___`.
+The Java example in `src-main.txt` is a reference that must be placed in the Java source directory before it can be built. Neither backend is deployed by the Pages workflow.
 
-## Backend options
-
-GitHub Pages serves the static frontend. The C# and Java folders are starter API projects for a future deployment on a separate backend host.
+**Author:** Nkosinathi Mathenjwa

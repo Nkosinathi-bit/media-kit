@@ -1,4 +1,5 @@
 (() => {
+  document.documentElement.classList.add("js");
   const body = document.body;
   const header = document.getElementById('siteHeader');
   const menu = document.querySelector('.menu-toggle');
@@ -10,8 +11,17 @@
   menu?.addEventListener('click', () => {
     const open = body.classList.toggle('menu-open');
     menu.setAttribute('aria-expanded', String(open));
+    menu.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   });
-  nav.forEach(link => link.addEventListener('click', () => { body.classList.remove('menu-open'); menu?.setAttribute('aria-expanded','false'); }));
+  nav.forEach(link => link.addEventListener('click', () => { body.classList.remove('menu-open'); menu?.setAttribute('aria-expanded','false'); menu?.setAttribute('aria-label','Open menu'); }));
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      body.classList.remove('menu-open');
+      menu?.setAttribute('aria-expanded', 'false');
+      menu?.setAttribute('aria-label', 'Open menu');
+    }
+  });
 
   if (cursor && window.matchMedia('(pointer:fine)').matches) {
     window.addEventListener('pointermove', e => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; }, { passive: true });
@@ -46,3 +56,4 @@
   }), { threshold: .5 });
   counts.forEach(el => countObserver.observe(el));
 })();
+
